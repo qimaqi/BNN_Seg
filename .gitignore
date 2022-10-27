@@ -1,0 +1,7 @@
+*.pt
+BNN_seg_exp/CamVid/*
+BNN_seg_exp/AMZ/*
+__pycache__
+.DS_Store
+data/AMZ/*
+data/CamVid/*
