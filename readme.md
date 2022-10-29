@@ -52,12 +52,8 @@ You can also make your own dataset class easily follow the template.
 ## 1. Usage
 
 ```
-# Data Tree
-config.data_dir/
-└── config.data_name/
-
 # Project Tree
-WHAT
+BNN_seg
 ├── BNN_seg_src/
 │       ├── data/ *.py
 │       ├── loss/ *.py
