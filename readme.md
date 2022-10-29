@@ -6,9 +6,10 @@ You can learn more details by reading a nice [blog](https://github.com/kyle-dorm
 
 ## Some results
 ### Result of CamVid dataset
-<img src="./BNN_seg_asset/CamVid/01inputs.png" alt="drawing" width="400"/>  Input 
-
-<img src="./BNN_seg_asset/CamVid/01results.png" alt="drawing" width="400"/> Results
+Input 
+<img src="./BNN_seg_asset/CamVid/01inputs.png" alt="drawing" width="400"/>  
+Results
+<img src="./BNN_seg_asset/CamVid/01results.png" alt="drawing" width="400"/> 
 
 
 
@@ -17,15 +18,16 @@ You can learn more details by reading a nice [blog](https://github.com/kyle-dorm
 (for ETH racing team AMZ, note that this is not public)
 Here we show the result from epoch 0 - 20 - 40 - 60 -80. You can see how the results change.
 
-<img src="./home/qimaqi/qimaqi/BNN_Seg/BNN_seg_asset/AMZ/input.gif" alt="drawing" width="400"/>  Input 
-
-<img src="./BNN_seg_asset/AMZ/label.gif" alt="drawing" width="400"/> Label
-
-<img src="./home/qimaqi/qimaqi/BNN_Seg/BNN_seg_asset/AMZ/pred.gif" alt="drawing" width="400"/> Prediction
-
-<img src="./BNN_seg_asset/AMZ/amz_a_var.gif" alt="drawing" width="400"/>Aleatoric
-
-<img src="./BNN_seg_asset/AMZ/amz_e_var.gif" alt="drawing" width="400"/>Epistemic
+ Input 
+<img src="./BNN_Seg/BNN_seg_asset/AMZ/input.gif" alt="drawing" width="400"/> 
+Label
+<img src="./BNN_seg_asset/AMZ/label.gif" alt="drawing" width="400"/> 
+Prediction
+<img src="./BNN_Seg/BNN_seg_asset/AMZ/pred.gif" alt="drawing" width="400"/> 
+Aleatoric Uncertainty
+<img src="./BNN_seg_asset/AMZ/amz_a_var.gif" alt="drawing" width="400"/>
+Epistemic Uncertainty
+<img src="./BNN_seg_asset/AMZ/amz_e_var.gif" alt="drawing" width="400"/>
 
 As you can see above the aleatoric is high around the cone boundary. This make sense because
 the boundary part is related to the measurement precision.
