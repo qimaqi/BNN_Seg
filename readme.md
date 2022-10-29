@@ -19,11 +19,11 @@ Results
 Here we show the result from epoch 0 - 20 - 40 - 60 -80. You can see how the results change.
 
  Input 
-<img src="./BNN_Seg/BNN_seg_asset/AMZ/input.gif" alt="drawing" width="400"/> 
+<img src="./BNN_seg_asset/AMZ/input.gif" alt="drawing" width="400"/> 
 Label
-<img src="./BNN_Seg/BNN_seg_asset/AMZ/label.gif" alt="drawing" width="400"/> 
+<img src="./BNN_seg_asset/AMZ/label.gif" alt="drawing" width="400"/> 
 Prediction
-<img src="./BNN_Seg/BNN_seg_asset/AMZ/pred.gif" alt="drawing" width="400"/> 
+<img src="./BNN_seg_asset/AMZ/pred.gif" alt="drawing" width="400"/> 
 Aleatoric Uncertainty
 <img src="./BNN_seg_asset/AMZ/amz_a_var.gif" alt="drawing" width="400"/>
 Epistemic Uncertainty
