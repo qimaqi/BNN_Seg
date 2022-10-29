@@ -13,7 +13,7 @@ parser.add_argument('--gpu', type=int, default=0)
 parser.add_argument("--num_gpu", type=int, default=1)
 parser.add_argument("--num_work", type=int, default=6)
 parser.add_argument("--exp_dir", type=str, default="../BNN_seg_exp")
-parser.add_argument("--exp_load", type=str, default= None)
+parser.add_argument("--exp_load", type=str, default= '1027_1450')
 
 # Data
 parser.add_argument("--data_dir", type=str, default="../data") # change to 
@@ -30,7 +30,7 @@ parser.add_argument('--in_channels', type=int, default=3)
 parser.add_argument('--n_classes', type=int, default=5) # 12 for Camvid, 5 for AMZ
 parser.add_argument('--n_feats', type=int, default=32)
 parser.add_argument('--var_weight', type=float, default=1.)
-parser.add_argument('--drop_rate', type=float, default=0.2)
+parser.add_argument('--drop_rate', type=float, default=0.5)
 
 # Train
 parser.add_argument("--epochs", type=int, default=400)

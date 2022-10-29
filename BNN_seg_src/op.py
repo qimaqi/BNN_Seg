@@ -198,9 +198,9 @@ class Operator:
                     # if you want to save images instead of look into tensorboard you can use following
                     _batch_size = (batch_label).size(dim=0)
                     for index_i in range(_batch_size):
-                        input_filename = os.path.join(self.save_dir,str(batch_idx) + '_batch' + str(index_i)+'_epoch_'+str(self.ckpt.last_epoch) +'_input.png' )
-                        mask_filename = os.path.join(self.save_dir,str(batch_idx) + '_batch' + str(index_i)+'_epoch_'+str(self.ckpt.last_epoch) + '_label.png' )
-                        pred_filename = os.path.join(self.save_dir,str(batch_idx) + '_batch' + str(index_i)+'_epoch_'+str(self.ckpt.last_epoch) + '_pred.png' )
+                        input_filename = os.path.join(self.save_dir,str(batch_idx).zfill(3) + '_batch_' + str(index_i)+'_epoch_'+str(self.ckpt.last_epoch) +'_input.png' )
+                        mask_filename = os.path.join(self.save_dir,str(batch_idx).zfill(3) + '_batch_' + str(index_i)+'_epoch_'+str(self.ckpt.last_epoch) + '_label.png' )
+                        pred_filename = os.path.join(self.save_dir,str(batch_idx).zfill(3) + '_batch_' + str(index_i)+'_epoch_'+str(self.ckpt.last_epoch) + '_pred.png' )
                         
                         
                         input_img_i = batch_input[index_i].permute((1,2,0)).float().cpu().numpy() * 255
@@ -210,12 +210,12 @@ class Operator:
                         cv2.imwrite(mask_filename,mask_save_i)
                         cv2.imwrite(pred_filename,pred_save_i)
                         if self.uncertainty == 'epistemic' or self.uncertainty == 'combined':
-                            e_var_filename = os.path.join(self.save_dir,str(batch_idx) + '_batch' + str(index_i)+'_epoch_'+str(self.ckpt.last_epoch) + 'e_var.png' )
+                            e_var_filename = os.path.join(self.save_dir,str(batch_idx).zfill(3) + '_batch_' + str(index_i)+'_epoch_'+str(self.ckpt.last_epoch) + 'e_var.png' )
                             heatmap_e_var = e_var_tensor[index_i].permute((1,2,0)).float().cpu().numpy().astype('uint8')
                             heatmap_e_var = heatmap_e_var[:,:,::-1] # rgb to bgr
                             cv2.imwrite(e_var_filename,heatmap_e_var)
                         if self.uncertainty == 'aleatoric' or self.uncertainty == 'combined':
-                            a_var_filename = os.path.join(self.save_dir,str(batch_idx) + '_batch' + str(index_i)+'_epoch_'+str(self.ckpt.last_epoch) + 'a_var.png' )
+                            a_var_filename = os.path.join(self.save_dir,str(batch_idx).zfill(3) + '_batch_' + str(index_i)+'_epoch_'+str(self.ckpt.last_epoch) + 'a_var.png' )
                             heatmap_a_var = a_var_tensor[index_i].permute((1,2,0)).float().cpu().numpy().astype('uint8')
                             heatmap_a_var = heatmap_a_var[:,:,::-1] # rgb to bgr
                             cv2.imwrite(a_var_filename,heatmap_a_var)

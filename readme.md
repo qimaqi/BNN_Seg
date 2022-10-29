@@ -5,6 +5,33 @@ This work use the [repo](https://github.com/hmi88/what) as main skeleton but cha
 You can learn more details by reading a nice [blog](https://github.com/kyle-dorman/bayesian-neural-network-blogpost).
 
 ## Some results
+### Result of CamVid dataset
+<img src="./BNN_seg_asset/CamVid/01inputs.png" alt="drawing" width="400"/>  Input 
+
+<img src="./BNN_seg_asset/CamVid/01results.png" alt="drawing" width="400"/> Results
+
+
+
+
+### Result of AMZ dataset 
+(for ETH racing team AMZ, note that this is not public)
+Here we show the result from epoch 0 - 20 - 40 - 60 -80. You can see how the results change.
+
+<img src="./home/qimaqi/qimaqi/BNN_Seg/BNN_seg_asset/AMZ/input.gif" alt="drawing" width="400"/>  Input 
+
+<img src="./BNN_seg_asset/AMZ/label.gif" alt="drawing" width="400"/> Label
+
+<img src="./home/qimaqi/qimaqi/BNN_Seg/BNN_seg_asset/AMZ/pred.gif" alt="drawing" width="400"/> Prediction
+
+<img src="./BNN_seg_asset/AMZ/amz_a_var.gif" alt="drawing" width="400"/>Aleatoric
+
+<img src="./BNN_seg_asset/AMZ/amz_e_var.gif" alt="drawing" width="400"/>Epistemic
+
+As you can see above the aleatoric is high around the cone boundary. This make sense because
+the boundary part is related to the measurement precision.
+
+As for Epistemic uncertainty you can see it is larger where cone is far away. This indicates
+that we have more uncertainty in large range and need more data for that.
 
 
 ## 1. Download the dataset
@@ -40,32 +67,33 @@ WHAT
 
 ```
 # Classification loss only 
-python train.py --uncertainty "normal"
+python main.py --uncertainty "normal" 
 
 # Epistemic / Aleatoric 
-python train.py --uncertainty ["epistemic", "aleatoric"]
+python main.py --uncertainty ["epistemic", "aleatoric"] 
 
 # Epistemic + Aleatoric
-python train.py --uncertainty "combined"
+python main.py --uncertainty "combined" 
 ```
-
 
 
 ### 1.2 Test
 
 ```
 # Classification loss only 
-python train.py --is_train false --uncertainty "normal"
+python main.py --is_train false --uncertainty "normal" --exp_load "the name of experiment siffix"
 
 # Epistemic
-python train.py --is_train false --uncertainty "epistemic" --n_samples 25 [or 5, 50]
+python main.py --is_train false --uncertainty "epistemic" --n_samples 25 [or 5, 50] --exp_load "the name of experiment siffix"
 
 # Aleatoric
-python train.py --is_train false --uncertainty "aleatoric" 
+python main.py --is_train false --uncertainty "aleatoric"  --exp_load "the name of experiment siffix"
 
 # Epistemic + Aleatoric
-python train.py --is_train false --uncertainty "combined" --n_samples 25 [or 5, 50]
+python main.py --is_train false --uncertainty "combined" --n_samples 25 [or 5, 50] --exp_load "the name of experiment siffix"
 ```
+Note that if your model name is "combined_1027_1450" then for exp_load you should use 1027_1450
+
 
 
 
@@ -85,38 +113,46 @@ This is not official implementation.
 
 
 
-### 2.1 Network & Datset
+### 2.1 Network 
 
 - Autoencoder based on [Bayesian Segnet](https://arxiv.org/abs/1511.02680)
 
-  - Network depth 2 (paper 5)
-  - Drop_rate 0.2 (paper 0.5)
-
-- Fahsion MNIST / MNIST
-
-  - Input = Label (for autoencoder)
-
-    
-
-### 2.2 Results
-
-#### 2.2.1 PSNR
-
-Combined > Aleatoric > Normal (w/o D.O) > Epistemic > Normal  (w/ D.O)
-
-<img src="./WHAT_asset/psnr.png" alt="drawing" width="400"/>
+  - Network depth 3 
+  - Drop_rate 0.5 
 
 
 
-#### 2.2.2 Images
+### 2.2 More results
+### Result of CamVid dataset
+<img src="./BNN_seg_asset/CamVid/02inputs.png" alt="drawing" width="400"/>  Input 
 
-<img src="./WHAT_asset/label.png" alt="drawing" width="400"/>  Input / Label
+<img src="./BNN_seg_asset/CamVid/02results.png" alt="drawing" width="400"/> Results
 
-<img src="./WHAT_asset/com.png" alt="drawing" width="400"/> Combined
+<img src="./BNN_seg_asset/CamVid/03inputs.png" alt="drawing" width="400"/>  Input 
 
-<img src="./WHAT_asset/al.png" alt="drawing" width="400"/> Aleatoric
+<img src="./BNN_seg_asset/CamVid/03results.png" alt="drawing" width="400"/> Results
 
-<img src="./WHAT_asset/ep.png" alt="drawing" width="400"/>Epistemic
+
+<img src="./BNN_seg_asset/CamVid/04inputs.png" alt="drawing" width="400"/>  Input 
+
+<img src="./BNN_seg_asset/CamVid/04results.png" alt="drawing" width="400"/> Results
+
+
+<img src="./BNN_seg_asset/CamVid/05inputs.png" alt="drawing" width="400"/>  Input 
+
+<img src="./BNN_seg_asset/CamVid/05results.png" alt="drawing" width="400"/> Results
+
+
+<img src="./BNN_seg_asset/CamVid/06inputs.png" alt="drawing" width="400"/>  Input 
+
+<img src="./BNN_seg_asset/CamVid/06results.png" alt="drawing" width="400"/> Results
+
+
+<img src="./BNN_seg_asset/CamVid/07inputs.png" alt="drawing" width="400"/>  Input 
+
+<img src="./BNN_seg_asset/CamVid/07results.png" alt="drawing" width="400"/> Results
+
+
 
 
 
