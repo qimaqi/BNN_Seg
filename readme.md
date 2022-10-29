@@ -18,16 +18,22 @@ Results
 (for ETH racing team AMZ, note that this is not public)
 Here we show the result from epoch 0 - 20 - 40 - 60 -80. You can see how the results change.
 
- Input 
+
 <img src="./BNN_seg_asset/AMZ/input.gif" alt="drawing" width="400"/> 
-Label
+Input 
+
 <img src="./BNN_seg_asset/AMZ/label.gif" alt="drawing" width="400"/> 
-Prediction
+Label
+
 <img src="./BNN_seg_asset/AMZ/pred.gif" alt="drawing" width="400"/> 
-Aleatoric Uncertainty
+Prediction
+
 <img src="./BNN_seg_asset/AMZ/amz_a_var.gif" alt="drawing" width="400"/>
-Epistemic Uncertainty
+Aleatoric Uncertainty
+
 <img src="./BNN_seg_asset/AMZ/amz_e_var.gif" alt="drawing" width="400"/>
+Epistemic Uncertainty
+
 
 As you can see above the aleatoric is high around the cone boundary. This make sense because
 the boundary part is related to the measurement precision.
@@ -100,13 +106,13 @@ Note that if your model name is "combined_1027_1450" then for exp_load you shoul
 
 
 ### 1.3 Requirements
+```
+conda create --name BNN_Seg python=3.8
 
-- Python3.7
+conda activate BNN_Seg 
 
-- Pytorch >= 1.0
-- Torchvision
-- distutils
-
+pip install -r requirement.txt
+```
 
 
 ## 2. Experiment
